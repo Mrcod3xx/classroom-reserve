@@ -1,0 +1,107 @@
+/* Classroom Reservation System Styles */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100vh;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+}
+
+/* Calendar Container */
+.calendar-container {
+    height: 600px;
+}
+
+/* Room Cards */
+.room-card {
+    transition: all 0.3s;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature-tag {
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* Dashboard Statistics */
+.dashboard-stat {
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    margin-bottom: 15px;
+}
+
+/* Room Type Badge Colors */
+.badge.bg-success {
+    background-color: #28a745 !important;
+}
+
+.badge.bg-warning {
+    background-color: #fd7e14 !important;
+}
+
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .calendar-container {
+        height: 400px;
+    }
+}
+
+/* Animation for notifications */
+@keyframes highlight {
+    0% { background-color: #fff3cd; }
+    50% { background-color: #fff8e1; }
+    100% { background-color: transparent; }
+}
+
+.highlight {
+    animation: highlight 2s ease-out;
+}
+
+/* Tooltip styling for room features */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+[data-tooltip]:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
